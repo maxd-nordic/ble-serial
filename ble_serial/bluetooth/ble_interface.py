@@ -24,7 +24,7 @@ class BLE_interface():
         assert device, f'No matching device found!'
 
         # address_type used only in Windows .NET currently
-        self.dev = BleakClient(device, address_type=addr_type, timeout=timeout)
+        self.dev = BleakClient(device, address_type=None, timeout=timeout)
         self.dev.set_disconnected_callback(self.handle_disconnect)
 
         logging.info(f'Trying to connect with {device}')
